@@ -7,23 +7,13 @@ import './todoListStyle.css';
 import { useState } from "react";
 
 function App(){
-  // constructor(){
-  //   super()
-  //   this.state={
-  //     items:[],
-  //     currentItem:{text:'', id:'', completed: false, edit: false},
-  //     itemToShow:"all",
-  //   }
-  // }
   const [items, setItem] = useState([])
   const [currentItem, setCurrentItem] = useState({text:'', id:'', completed: false, edit: false})
   const [itemToShow, setItemToShow] = useState(["all"])
 
   const handleInput = e =>{
     const itemText = e.target.value
-    //const currentItem = { text :itemText, id: Date.now(), completed: false, edit: false }//Date.now() returns the number of milliseconds
     setCurrentItem({ text :itemText, id: Date.now(), completed: false, edit: false })
-    //this.setState({ currentItem, })//update the state from previous to new value when new item is triggered
     console.log("Hello new item.");
   }
   const addItem = e =>{
@@ -32,11 +22,6 @@ function App(){
     if(newItem.text !== ''){
       console.log("new item enters")
       const itemss = [...items, newItem]
-      // this.setState({
-      //   items: items,
-      //   currentItem: { text: '', id:'', completed: false, edit: false},
-      //   itemToShow:"all",
-      // })
       setItem(itemss)
       setCurrentItem({ text: '', id:'', completed: false, edit: false})
       setItemToShow("all")
@@ -47,9 +32,6 @@ function App(){
     const filteredItems = items.filter(item => {//traverse items array, remove id, group remaining data in filtereditems array
       return item.id !== id//removed the particular id on clicking
     })
-    // this.setState({
-    //   items: filteredItems,//updated the items array
-    // })
     setItem(filteredItems)
   }
   const completeItem = id => {
@@ -57,30 +39,18 @@ function App(){
     return item.id === id ?{...item, completed: !item.completed} : item
   })
   console.log(mapItems)
-  // this.setState({
-  //   items:mapItems,
-  // })
   setItem(mapItems)
    }
 
    const handleAll = (itemState) => {
-    // this.setState({
-    //   itemToShow: itemState
-    // })
     setItemToShow(itemState)
    }
 
    const handleActive = (itemState) => {
-    // this.setState({
-    //   itemToShow: itemState
-    // })
     setItemToShow(itemState)
    }
 
    const handleCompleted = (itemState) => {
-    // this.setState({
-    //   itemToShow: itemState
-    // })
     setItemToShow(itemState)
    }
 
@@ -91,9 +61,6 @@ function App(){
        return item.id===id ? {...item, edit: true}:item
      });
 
-    //  this.setState({
-    //    items: updateItemState,
-    //  })
     setItem(updateItemState)
      console.log(items)
    }
@@ -105,9 +72,6 @@ function App(){
        return item.id === id ? {...item, text: newItem}: item
      })
 
-    //  this.setState({
-    //    items: updateItem
-    //  })
     setItem(updateItem)
   }
 
@@ -116,9 +80,6 @@ function App(){
     const updateListItem = items.map(item => {
       return item.id === id ? {...item, edit: false} : item
     })
-  //   this.setState({
-  //    items: updateListItem
-  //  })
   setItem(updateListItem)
    } 
   }
@@ -126,9 +87,7 @@ function App(){
   const clearCompletedItems = () =>{
     const activeItems = items.filter(item => item.completed === false)
     console.log(activeItems)
-    // this.setState({
-    //   items:activeItems
-    // })
+
     setItem(activeItems)
   }
 
@@ -137,9 +96,6 @@ function App(){
       return item.completed === false ? {...item, completed: true}:{...item, completed: false} 
     } )
     console.log(changeItemState)
-    // this.setState({
-    //   items:changeItemState
-    // })
     setItem(changeItemState)
   }
 
