@@ -29,7 +29,6 @@ function TodoItem(props) {
       <div className="todoListItem">
         <li className={props.entries.completed === false ? "" : "crossed-line"}>
           <div className="typeList">
-            {/* <div onClick={() => props.completeItem(props.entries.id)}> */}
             <div
               onClick={() =>
                 dispatch({ type: "TOGGLE_TODO", payload: props.entries.id })

@@ -4,9 +4,6 @@ import { useState } from "react";
 import "./todoListStyle.css";
 import expand from "./assets/expand_more_black_24dp.svg";
 
-//import { addTodo } from "./redux/action/actionIndex";
-import { connect } from "react-redux";
-
 import { useDispatch, useSelector } from "react-redux";
 
 function TodoList(props) {
