@@ -8,22 +8,30 @@ import filledCircle from "./assets/check_black_24dp.svg";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
+import { useCallback } from "react";
+
 function TodoItem(props) {
   const todos = useSelector((state) => state.items);
   const todoValue = useSelector((state) => state.data);
 
   const dispatch = useDispatch();
 
-  const updateChange = (value, id) => {
-    dispatch({ type: "EDIT_VALUE", payload: value, id: id });
-  };
+  const updateChange = useCallback(
+    (value, id) => {
+      dispatch({ type: "EDIT_VALUE", payload: value, id: id });
+    },
+    [dispatch]
+  );
 
-  const handleUpdateValue = (e, id) => {
-    if (e.keyCode === 13) {
-      dispatch({ type: "FINAL_VALUE", payload: id });
-    }
-  };
-  console.log(props.entries.id);
+  const handleUpdateValue = useCallback(
+    (e, id) => {
+      if (e.keyCode === 13) {
+        dispatch({ type: "FINAL_VALUE", payload: id });
+      }
+    },
+    [dispatch]
+  );
+
   return props.entries.edit === false ? (
     <div>
       <div className="todoListItem">

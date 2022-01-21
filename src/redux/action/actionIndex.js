@@ -25,18 +25,9 @@
 //   };
 // };
 
-// export const todoListFilter = (filter) => ({
-//   type: "SET_TODOLIST_FILTER",
-//   filter,
-// });
-
-// export const todolistFilters = {
-//   SHOW_ALL: "SHOW_ALL",
-//   SHOW_COMPLETED: "SHOW_COMPLETED",
-//   SHOW_ACTIVE: "SHOW_ACTIVE",
-// };
-
-// export const toggleTodo = (id) => ({
-//   type: "TOGGLE_TODO",
-//   id,
-// });
+// const setVisibiltyFilter = filter => {
+//     return {
+//       type: "SET_VISIBILTY_FILTER",
+//       filter: filter
+//     };
+//   };

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import "./todoListStyle.css";
 import expand from "./assets/expand_more_black_24dp.svg";
@@ -12,12 +12,16 @@ function TodoList(props) {
 
   const todos = useSelector((state) => state.items);
 
-  const handleInput = (e) => {
-    setCurrentItem(e.target.value);
-  };
-  const resetValue = () => {
+  const resetValue = useCallback(() => {
     setCurrentItem("");
-  };
+    dispatch({
+      type: "ADD_TODO",
+      text: currentItem,
+      id: Date.now(),
+      completed: false,
+      edit: false,
+    });
+  }, [dispatch, currentItem]);
 
   return (
     <div className="todoMain">
@@ -32,21 +36,10 @@ function TodoList(props) {
             placeholder="What needs to be done?"
             ref={props.inputElement}
             value={currentItem}
-            onChange={(e) => handleInput(e)}
+            //value={todos.text}
+            // onChange={(e) => handleInput(e)}
+            onChange={(e) => setCurrentItem(e.target.value)}
           />
-          <button
-            onClick={() =>
-              dispatch({
-                type: "ADD_TODO",
-                text: currentItem,
-                id: Date.now(),
-                completed: false,
-                edit: false,
-              })
-            }
-          >
-            ADD
-          </button>
         </form>
       </div>
     </div>

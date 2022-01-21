@@ -54,6 +54,28 @@ export const tasks = (state = initialState, action) => {
         items: state.items.filter((item) => item.completed === false),
       };
 
+    // case "INPUT_VALUE":
+    //   return {
+    //     items: [
+    //       ...state.items,
+    //       {
+    //         text: action.payload,
+    //       },
+    //     ],
+    //   };
+
+    // case "ALL":
+    //   const allTodos = state.items;
+    //   return { items: allTodos };
+
+    // case "ACTIVE":
+    //   const activeTodos = state.items.filter((item) => !item.completed);
+    //   return { items: activeTodos };
+
+    // case "COMPLETED":
+    //   const completedTodos = state.items.filter((item) => item.completed);
+    //   return { items: completedTodos };
+
     default:
       return state;
   }

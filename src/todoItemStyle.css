@@ -1,143 +1,141 @@
-
-.crossed-line{
-    color:#d9d9d9;
-    text-decoration: line-through;
+.crossed-line {
+  color: #d9d9d9;
+  text-decoration: line-through;
 }
 
-.typeList{
-    height:60px;
-    border:none;
+.typeList {
+  height: 60px;
+  border: none;
 }
 
-.todoListItem{
-    width: 400px;
-    margin:0 auto;
-   position:relative;
-   background-color: white;
-   box-shadow:inset 0 -2px 1px rgb(0 0 0 / 3%);
-   border:none;
-   font-family: 'Roboto', sans-serif;
+.todoListItem {
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+  background-color: white;
+  box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+  border: none;
+  font-family: "Roboto", sans-serif;
 }
 
-.todoListItem li{
-    position:relative;
-    font-size:20px;
-    list-style: none;
+.todoListItem li {
+  position: relative;
+  font-size: 20px;
+  list-style: none;
 }
 
-.todoCheckbox{
-    width:60px;
-    height:30px;
-    border-radius: 100%;
-    position: absolute;
-    top: 15px;
-    left:0;
-    bottom: 0;
+.todoCheckbox {
+  width: 60px;
+  height: 30px;
+  border-radius: 100%;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  bottom: 0;
 }
 
-.todoLabel{
-    padding: 15px 50px 10px 50px;
-    display: block;
-    line-height: 1.5;
-    font-size: 24px;
+.todoLabel {
+  /* padding: 15px 50px 10px 50px; */
+  margin-right: 250px;
+  padding-top: 10px;
+  padding-left: 12px;
+  display: block;
+  line-height: 1.5;
+  font-size: 24px;
 }
 
-.updateItemValue{
-    position:relative;
-    top:2px;
-    height:60px;
-    width:400px;
-    border: none;
-    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%); ;
-    font-size: 24px;
-    padding: 15px 15px 15px 60px;
-    font-family: 'Roboto', sans-serif;
-    outline:none;
+.updateItemValue {
+  position: relative;
+  top: 2px;
+  height: 60px;
+  width: 400px;
+  border: none;
+  box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+  font-size: 24px;
+  padding: 15px 15px 15px 60px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
 }
 
-.buttonsDiv{
-    display: flex;
-    margin: 0 auto;
-    width: 400px;
-    height:40px;
-    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);;
-    position:relative;
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-    
+.buttonsDiv {
+  display: flex;
+  margin: 0 auto;
+  width: 400px;
+  height: 40px;
+  box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+  position: relative;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
 }
-.itemCount{
-    flex:1;
-    position:relative;
-    top:10px;
-    color:#777;
-    font-size:13px;
+.itemCount {
+  flex: 1;
+  position: relative;
+  top: 10px;
+  color: #777;
+  font-size: 13px;
 }
-.itemStatus{
-    margin:0;
-    padding:0;
-    list-style: none;
-    position:relative;
-    top:2px;
-    right:5px;
-    
-    
-    display:inherit;
-    flex:2;
+.itemStatus {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  top: 2px;
+  right: 5px;
+
+  display: inherit;
+  flex: 2;
 }
 
-.itemStatus a{
-    margin:2px;
-    padding: 4px 5px;
-    text-decoration: none;
-    border-radius: 3px;
-    color:#777;
-    font-size: 13px;
+.itemStatus a {
+  margin: 2px;
+  padding: 4px 5px;
+  text-decoration: none;
+  border-radius: 3px;
+  color: #777;
+  font-size: 13px;
 }
 
-.itemStatus a:focus{
-    margin:2px;
-    padding: 4px 5px;
-    text-decoration: none;
-    border-radius: 3px;
-    color:#777;
-    font-size: 13px;
-    border: 1px solid #d9d9d9;
+.itemStatus a:focus {
+  margin: 2px;
+  padding: 4px 5px;
+  text-decoration: none;
+  border-radius: 3px;
+  color: #777;
+  font-size: 13px;
+  border: 1px solid #d9d9d9;
 }
 
-.completedCount{
-    font-size: 13px;
-    color:#777;
-    flex:1;
-    position:relative;
-    top:10px;
-    cursor: pointer;
+.completedCount {
+  font-size: 13px;
+  color: #777;
+  flex: 1;
+  position: relative;
+  top: 10px;
+  cursor: pointer;
 }
 
-.allActive{
-    font-size: 13px;
-    color:#777;
-    flex:1;
-    position:relative;
-    top:10px;
-    display:none;
+.allActive {
+  font-size: 13px;
+  color: #777;
+  flex: 1;
+  position: relative;
+  top: 10px;
+  display: none;
 }
 
-.deleteTodo{
-    display:none;
+.deleteTodo {
+  display: none;
 }
-.todoListItem:hover .deleteTodo{
-    position: absolute;
-    top:10px;
-    right:8px;
-    bottom: 0;
-    width:40px;
-    height:40px;
-    margin: 0 auto;
-    font-size:10px;
-    padding-right:20px;
-    color:#cc9a9a;
-    display:block;
+.todoListItem:hover .deleteTodo {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 10px;
+  padding-right: 20px;
+  color: #cc9a9a;
+  display: block;
 }
-
-

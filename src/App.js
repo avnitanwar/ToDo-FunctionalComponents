@@ -16,18 +16,6 @@ function App() {
 
   const [itemToShow, setItemToShow] = useState("all");
 
-  const handleAll = (itemState) => {
-    setItemToShow(itemState);
-  };
-
-  const handleActive = (itemState) => {
-    setItemToShow(itemState);
-  };
-
-  const handleCompleted = (itemState) => {
-    setItemToShow(itemState);
-  };
-
   let filterItems = [];
   if (itemToShow === "all") {
     filterItems = todos;
@@ -51,13 +39,17 @@ function App() {
           {todos.filter((item) => !item.completed).length} item left
         </div>
         <ul className="itemStatus">
-          <TodoButton handleShow={() => handleAll("all")} buttonText={"All"} />
+          {/* <TodoButton handleShow={() => handleAll("all")} buttonText={"All"} /> */}
           <TodoButton
-            handleShow={() => handleActive("active")}
+            handleShow={() => setItemToShow("all")}
+            buttonText={"All"}
+          />
+          <TodoButton
+            handleShow={() => setItemToShow("active")}
             buttonText={"Active"}
           />
           <TodoButton
-            handleShow={() => handleCompleted("completed")}
+            handleShow={() => setItemToShow("completed")}
             buttonText={"Completed"}
           />
         </ul>
